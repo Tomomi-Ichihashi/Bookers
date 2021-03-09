@@ -5,19 +5,19 @@
     <span><%= book.title %></span>
     <p>Body</p>
     <span><%= book.body %></span>
-    <span><%= link_to 'Show', show_path(book.id) %></span>
+    <span><%= link_to 'Show', book_path(book.id) %></span>
     <span><%= link_to 'Edit', edit_path(book.id) %></span>
-    <span><%= link_to 'Destroy', destroy_path(book.id), method: :delet,"date-confirm" => "Are you sure?" %></span>
+    <span><%= link_to 'Destroy', book_path(book.id), method: :delete,"data-confirm" => "Are you sure?" %></span>
     <% end %>
 </div>
 
 <div class = "new">
     <h1>New book</h1>
-    <%= form_with model:@book, url:'/books',local:true do |f| %>
+    <%= form_with model:@book,local:true do |f| %>
     <h4>Title</h4>
     <%= f.text_field :title %>
     <h4>Body</h4>
     <%= f.text_area :body %>
-<% f.submit 'Create Book' %>
-<% end %>
+    <%= f.submit 'Create Book' %>
+    <% end %>
 </div>
