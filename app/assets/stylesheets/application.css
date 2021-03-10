@@ -20,6 +20,15 @@
   box-sizing: border-box;
 }
 
+.notice {
+  color: green;
+  }
+
+.link {
+  text-decoration: none;
+  color: #000000;
+}
+
 /*topページ*/
 .top {
   margin-top: 20px;
@@ -33,9 +42,7 @@
   font-size: 13px;
 }
 
-.notice {
-  color: green;
-  }
+
 
 /*indexページ*/
 .index-message{
