@@ -4,17 +4,26 @@
     </p>
 <% end %>
 
-<div class = "index">
-    <h1>Books</h1>
+<h1>Books</h1>
+<div role = "grid" aria-readonly = "ture">
+    <table class = "t1" role = "presentation">
+        <tr role = "row">
+            <th role= "columnheader">Title</th>
+            <th role= "columnheader">Body</th>
+        </tr>
+    </table>
+    
+    <table class = "t2">
     <% @books.each do |book| %>
-    <p>Title</p>
-    <span><%= book.title %></span>
-    <p>Body</p>
-    <span><%= book.body %></span>
-    <span><%= link_to 'Show', book_path(book.id) %></span>
-    <span><%= link_to 'Edit', edit_path(book.id) %></span>
-    <span><%= link_to 'Destroy', book_path(book.id), method: :delete,"data-confirm" => "Are you sure?" %></span>
+        <tr role = "row">
+            <td role = "gridcell"><%= book.title %></td>
+            <td role = "gridcell"><%= book.body %></td>
+            <td role = "gridcell"><%= link_to 'Show', book_path(book.id) %></td>
+            <td role = "gridcell"><%= link_to 'Edit', edit_path(book.id) %></td>
+            <td role = "gridcell"><%= link_to 'Destroy', book_path(book.id), method: :delete,"data-confirm" => "Are you sure?" %></td>
+        </tr>
     <% end %>
+   </table>
 </div>
 
 <div class = "new">
