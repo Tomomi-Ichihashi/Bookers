@@ -1,17 +1,26 @@
-<% if flash[:notice] %>
-    <p id = "notice">
-        <%= flash[:notice] %>
-    </p>
-<% end %>
+<div class = "show">
+    <% if flash[:notice] %>
+        <p id = "notice">
+            <%= flash[:notice] %>
+        </p>
+    <% end %>
+    <div class ="show1">
+        <div class ="show-title">
+            <span><b>Title:</b></span>
+            <span><%= @book.title %></span>
+        </div>
+        <div class ="show-body">
+            <span><b>Body:</b></span>
+            <span><%= @book.body %></span>
+        </div>
+    </div>
 
-<h2>Title:</h2>
-<p><%= @book.title %></p>
-<h2>Body:</h2>
-<p><%= @book.body %></p>
-
-<span>
-<%= link_to 'Edit',  edit_path(@book.id) %>
-</span>
-<span>
-<%= link_to 'Back', index_path %>
-</span>
+    <div class = "show2">
+        <span>
+        <%= link_to 'Edit',  edit_path(@book.id) %>
+        </span>
+        <span>
+        <%= link_to 'Back', index_path %>
+        </span>
+    </div>
+</div>

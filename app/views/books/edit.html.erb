@@ -1,28 +1,35 @@
-<h1>Editing Book</h1>
+<div class ="edit">
+    <h2>Editing Book</h2>
     <%= form_with model:@book,local:true do |f| %>
-    <h4>Title</h4>
-    <%= f.text_field :title %>
-    <h4>Body</h4>
-    <%= f.text_area :body %>
-    <%= f.submit 'Create Book' %>
+    <p>Title</p>
+    <span><%= f.text_field :title %></span>
+    <p>Body</p>
+    <span><%= f.text_area :body %></span>
+    <span><%= f.submit 'Update Book' %></span>
     <% end %>
-
-<% if @book.errors.any? %>
-<div id = "error_explanation" class = "alert alert_danger">
-    <ul>
-        <% @book.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-        <% end %>
-    </ul>
 </div>
-<% end %>
 
-<span>
-<%= link_to 'Show',  book_path(@book.id) %>
-</span>
-<span>
-<%= link_to 'Back', index_path %>
-</span>
+<div class = "edit-alert">
+    <% if @book.errors.any? %>
+    <div id = "error_explanation" class = "alert alert_danger">
+        <h1>error</h1>
+        <ul>
+            <% @book.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+        </ul>
+    </div>
+    <% end %>
+</div>
+
+<div class= "edit-link">
+    <span>
+    <%= link_to 'Show',  book_path(@book.id) %>
+    </span>
+    <span>
+    <%= link_to 'Back', index_path %>
+    </span>
+</div>
 
 
  
